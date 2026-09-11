@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="寒くなる前の今こそ、頑張らなくていい温活を。完全個室で、着替え不要、初回15分から。陶板浴の魅力を、悩み別にやさしくご案内します。" />
+  <title>陶板浴｜秋から始める、頑張らなくていい温活</title>
+  <style>
+    :root{
+      --bg:#fffaf5;
+      --bg-soft:#fff4eb;
+      --panel:#ffffff;
+      --ink:#2d201a;
+      --muted:#6b5a50;
+      --line:rgba(86,58,42,.14);
+      --accent:#b44d30;
+      --accent-2:#d89d57;
+      --gold:#d0a15d;
+      --brown:#6f4b3c;
+      --shadow:0 18px 50px rgba(88,56,38,.12);
+      --radius:26px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.85;
+      letter-spacing:.03em;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic","YuGothic",Meiryo,sans-serif;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    h1,h2,h3,.serif{
+      font-family:"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+      font-weight:500;
+      letter-spacing:.05em;
+      line-height:1.35;
+      margin:0;
+    }
+    p{margin:0 0 1em}
+    .container{width:min(var(--max), 92%); margin:auto}
+    .section{padding:86px 0}
+    .soft{background:var(--bg-soft)}
+    .eyebrow{
+      color:var(--accent);
+      font-size:.83rem;
+      letter-spacing:.16em;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+    .section-title{
+      font-size:clamp(2rem, 5vw, 3.5rem);
+      margin:.25em 0 .45em;
+    }
+    .lead{
+      color:#4b3a31;
+      font-size:clamp(1.02rem, 1.8vw, 1.22rem);
+    }
+    .accent{color:var(--accent)}
+    .hero{
+      min-height:100svh;
+      background:
+        linear-gradient(90deg, rgba(255,250,245,.96) 0%, rgba(255,250,245,.90) 42%, rgba(255,250,245,.38) 70%, rgba(255,250,245,.12) 100%),
+        url("assets/hero_wide.png") center right/cover no-repeat;
+      display:grid;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:0;
+      height:110px;
+      background:linear-gradient(transparent, var(--bg));
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      width:min(690px, 92%);
+      margin-left:5vw;
+      padding:64px 0 82px;
+    }
+    .hero h1{
+      font-size:clamp(2.7rem, 7vw, 5.5rem);
+      line-height:1.12;
+      margin:.2em 0 .26em;
+    }
+    .hero p{
+      font-size:clamp(1.02rem, 1.8vw, 1.25rem);
+      color:#4b3b33;
+      max-width:610px;
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin:26px 0 10px}
+    .chip{
+      background:rgba(255,255,255,.76);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:.9rem;
+      box-shadow:0 8px 18px rgba(88,56,38,.05);
+      backdrop-filter:blur(8px);
+    }
+    .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:26px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:56px;
+      padding:0 24px;
+      border-radius:999px;
+      font-weight:700;
+      transition:transform .2s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:var(--accent); color:#fff; box-shadow:var(--shadow)}
+    .btn.secondary{background:rgba(255,255,255,.85); border-color:var(--line)}
+    .mini-note{font-size:.84rem; color:#7b695f; margin-top:10px}
+
+    .grid-2{display:grid; grid-template-columns:1.02fr .98fr; gap:56px; align-items:center}
+    .photo{
+      background:#eee;
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .photo img{width:100%; height:100%; object-fit:cover}
+
+    .pain-grid{
+      margin-top:28px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    .pain{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px 18px;
+      box-shadow:0 10px 24px rgba(88,56,38,.04);
+    }
+    .pain:before{
+      content:"✓";
+      color:var(--accent);
+      font-weight:800;
+      margin-right:8px;
+    }
+
+    .diag-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:clamp(24px, 4vw, 46px);
+      box-shadow:var(--shadow);
+    }
+    .diag-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin:26px 0;
+    }
+    .diag-btn{
+      border:1px solid var(--line);
+      background:#fff9f4;
+      border-radius:18px;
+      padding:18px 16px;
+      text-align:left;
+      cursor:pointer;
+      transition:.2s;
+      font:inherit;
+      color:inherit;
+    }
+    .diag-btn:hover,.diag-btn.active{
+      border-color:var(--accent);
+      background:#fff0e6;
+      transform:translateY(-2px);
+    }
+    .diag-btn b{display:block; margin-bottom:4px}
+    .diag-result{
+      min-height:156px;
+      border-radius:24px;
+      background:linear-gradient(135deg,#fff6ef,#f8ebdf);
+      border:1px solid rgba(180,77,48,.12);
+      padding:22px 24px;
+    }
+    .diag-result h3{font-size:1.45rem; margin-bottom:8px}
+
+    .feature-cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:28px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:0 10px 30px rgba(88,56,38,.05);
+    }
+    .card .num{
+      color:var(--gold);
+      font-weight:800;
+      font-size:.82rem;
+      letter-spacing:.14em;
+    }
+    .card h3{font-size:1.32rem; margin:.42em 0 .5em}
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      margin-top:28px;
+    }
+    .step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:22px;
+    }
+    .step .label{
+      color:var(--accent);
+      font-weight:800;
+      font-size:.82rem;
+      letter-spacing:.14em;
+    }
+
+    .banner{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg, rgba(48,26,18,.86), rgba(48,26,18,.40)),
+        url("assets/room_portrait.png") center right/cover no-repeat;
+      color:#fff;
+      min-height:560px;
+      display:grid;
+      align-items:center;
+    }
+    .banner .content{
+      width:min(640px, 92%);
+      margin-left:4vw;
+      padding:70px 0;
+    }
+    .banner .content h2{
+      font-size:clamp(2rem,5vw,3.8rem);
+      margin:.3em 0 .42em;
+    }
+    .quote{
+      font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+      font-size:clamp(1.35rem,3vw,1.8rem);
+      color:#ffe3cf;
+      line-height:1.7;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+    }
+    .stack{
+      display:grid;
+      gap:18px;
+    }
+
+    table.compare{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      margin-top:26px;
+      background:#fff;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .compare th,.compare td{
+      padding:16px 14px;
+      border-bottom:1px solid var(--line);
+      border-right:1px solid var(--line);
+      text-align:center;
+      font-size:.94rem;
+      vertical-align:middle;
+    }
+    .compare tr:last-child td{border-bottom:none}
+    .compare th:last-child,.compare td:last-child{border-right:none}
+    .compare thead th{background:#f9efe6}
+    .compare thead th:nth-child(2), .compare tbody td:nth-child(2){background:#fff1e8}
+
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px 20px;
+      margin:12px 0;
+    }
+    summary{cursor:pointer; font-weight:700}
+
+    .final{
+      background:
+        linear-gradient(rgba(255,250,245,.72), rgba(255,250,245,.92)),
+        url("assets/hero_wide.png") center/cover no-repeat;
+    }
+    .final-box{
+      max-width:760px;
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.75);
+      border-radius:32px;
+      padding:clamp(28px, 5vw, 56px);
+      box-shadow:var(--shadow);
+    }
+
+    .sticky{
+      display:none;
+      position:fixed;
+      left:12px; right:12px; bottom:12px;
+      z-index:99;
+      gap:10px;
+      padding:10px;
+      background:rgba(255,250,245,.94);
+      backdrop-filter:blur(12px);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:0 18px 40px rgba(54,33,24,.18);
+    }
+    footer{
+      background:#2d211b;
+      color:#eadfd7;
+      font-size:.85rem;
+      padding:28px 0;
+    }
+    @media (max-width:960px){
+      .grid-2, .gallery{grid-template-columns:1fr}
+      .diag-grid, .feature-cards, .steps{grid-template-columns:1fr 1fr}
+      .hero{background-position:68% center}
+    }
+    @media (max-width:700px){
+      .section{padding:62px 0}
+      .hero{min-height:92svh; background-position:74% center}
+      .hero-inner{margin-left:4vw}
+      .pain-grid, .diag-grid, .feature-cards, .steps{grid-template-columns:1fr}
+      .compare th,.compare td{font-size:.78rem; padding:10px 8px}
+      .sticky{display:flex}
+      .sticky .btn{flex:1; min-height:48px; padding:0 14px; font-size:.9rem}
+      body{padding-bottom:82px}
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">AUTUMN TOBAN-YOKU / EPORASHE</div>
+    <h1>寒くなる前の今、<br><span class="accent">頑張らなくていい温活</span>を。</h1>
+    <p>
+      陶板浴は、約40℃前後の心地よい温かさの陶板の上で、ただ横になるだけ。<br>
+      完全個室・着替え不要・初回15分から。<br>
+      忙しい毎日に、<strong>土日の癒し時間</strong>を。
+    </p>
+
+    <div class="chips">
+      <span class="chip">初回15分から</span>
+      <span class="chip">ワンコイン体験 500円</span>
+      <span class="chip">完全個室</span>
+      <span class="chip">着替え不要</span>
+      <span class="chip">サウナが苦手な方にも</span>
+    </div>
+
+    <div class="cta-row">
+      <a href="#diagnosis" class="btn primary">わたしに合うか診断する</a>
+      <a href="#reserve" class="btn secondary">予約・店舗情報を見る</a>
+    </div>
+    <div class="mini-note">※キャンペーン内容は実施状況に合わせてご調整ください。</div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container grid-2">
+    <div>
+      <div class="eyebrow">WHY NOW?</div>
+      <h2 class="section-title">冬になってからではなく、<br><span class="accent">“今”始める理由</span>があります。</h2>
+      <p class="lead">
+        夏は、冷房・冷たい飲み物・シャワー中心の生活で、知らないうちに身体を冷やしがち。<br>
+        秋は、そんな“冷やす生活”から“温める生活”へ切り替えるタイミングです。
+      </p>
+      <div class="pain-grid">
+        <div class="pain">最近、手足の冷えが気になる</div>
+        <div class="pain">なんとなく疲れが抜けにくい</div>
+        <div class="pain">休みの日まで予定で埋まりがち</div>
+        <div class="pain">サウナの熱さは少し苦手</div>
+        <div class="pain">寝つきや眠りの浅さが気になる</div>
+        <div class="pain">美容のためにも自分をいたわりたい</div>
+      </div>
+      <p style="margin-top:18px">
+        ひとつでも当てはまるなら、今のあなたに必要なのは、<br>
+        <strong class="accent">“頑張る温活”ではなく“休む温活”</strong>かもしれません。
+      </p>
+    </div>
+    <div class="photo"><img src="assets/experience_portrait.png" alt="陶板浴でくつろぐイメージ"></div>
+  </div>
+</section>
+
+<section class="section soft" id="diagnosis">
+  <div class="container">
+    <div class="diag-box">
+      <div class="eyebrow">30 SECOND CHECK</div>
+      <h2 class="section-title">今のあなたに近いものを<br>選んでください。</h2>
+      <p class="lead">気になるものをタップすると、陶板浴のおすすめポイントが表示されます。</p>
+
+      <div class="diag-grid">
+        <button class="diag-btn" data-key="busy"><b>とにかく忙しい</b>休日も予定を詰め込みがち</button>
+        <button class="diag-btn" data-key="cold"><b>冷えが気になる</b>冷房の冷えが残っている</button>
+        <button class="diag-btn" data-key="sleep"><b>眠りを整えたい</b>オフに切り替えるのが苦手</button>
+        <button class="diag-btn" data-key="beauty"><b>美容も大切</b>外側だけでなく土台も整えたい</button>
+        <button class="diag-btn" data-key="sauna"><b>サウナは苦手</b>熱さを我慢するのは得意ではない</button>
+        <button class="diag-btn" data-key="season"><b>季節の変わり目が苦手</b>なんとなく不調を感じやすい</button>
+      </div>
+
+      <div class="diag-result" id="diag-result">
+        <h3>あなたにおすすめなのは…</h3>
+        <p>気になる項目を選ぶと、ここにおすすめの受け方が表示されます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="banner">
+  <div class="content">
+    <div class="eyebrow" style="color:#ffd8c2">FOR BUSY WOMEN</div>
+    <h2>忙しいあなたには、<br>土日の癒し時間。</h2>
+    <p>
+      平日は仕事や家事で、自分のことはつい後回し。<br>
+      せっかくの休日も、美容院・買い物・用事で終わってしまう。
+    </p>
+    <p>
+      だからこそ、ほんの15分でも30分でも、<br>
+      <strong>「休むこと」を予定に入れていい。</strong>
+    </p>
+    <p class="quote">予定を詰める休日から、<br>回復を予定に入れる休日へ。</p>
+    <div class="cta-row">
+      <a href="#reserve" class="btn primary">まずは初回体験をみる</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid-2">
+    <div class="photo"><img src="assets/bed_detail.png" alt="陶板浴ベッドの詳細"></div>
+    <div>
+      <div class="eyebrow">WHAT IS TOBAN-YOKU?</div>
+      <h2 class="section-title">陶板浴って、<br><span class="accent">どんなもの？</span></h2>
+      <p class="lead">
+        温められた陶板の上で、ただ横になるだけの、やさしい温活です。<br>
+        高温を我慢するのではなく、心地よい中温の中でゆっくり過ごします。
+      </p>
+      <div class="feature-cards">
+        <div class="card">
+          <div class="num">01 / GENTLE</div>
+          <h3>約40℃前後の心地よさ</h3>
+          <p>サウナのような高温ではなく、やさしい温かさ。熱い場所が苦手な方にも取り入れやすい温活です。</p>
+        </div>
+        <div class="card">
+          <div class="num">02 / EASY</div>
+          <h3>着替え不要で気軽</h3>
+          <p>「準備が面倒で続かない」を減らし、受けたいと思ったときに取り入れやすいスタイルです。</p>
+        </div>
+        <div class="card">
+          <div class="num">03 / PRIVATE</div>
+          <h3>完全個室でひとり時間</h3>
+          <p>周りを気にせず、自分のペースで。静かに過ごしたい方にも心地よい時間になります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="eyebrow">WHY FIRST-TIMERS LIKE IT</div>
+    <h2 class="section-title">はじめての方にも<br><span class="accent">選ばれやすい理由</span></h2>
+    <div class="feature-cards">
+      <div class="card">
+        <div class="num">POINT 1</div>
+        <h3>「思ったより気軽」だから</h3>
+        <p>初回15分から体験しやすく、まずは一度試してみたい方にもハードルが低いのが魅力です。</p>
+      </div>
+      <div class="card">
+        <div class="num">POINT 2</div>
+        <h3>「がんばらなくていい」から</h3>
+        <p>汗をたくさんかくために我慢するのではなく、ただ横になって、身体を休ませる時間そのものが価値になります。</p>
+      </div>
+      <div class="card">
+        <div class="num">POINT 3</div>
+        <h3>「ひとり時間」になるから</h3>
+        <p>忙しい毎日に不足しがちな余白をつくれることも、陶板浴ならではの魅力です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">REAL SPACE</div>
+    <h2 class="section-title">実際は、こんな空間で<br>お過ごしいただきます。</h2>
+    <div class="gallery">
+      <div class="photo"><img src="assets/hero_wide.png" alt="陶板浴の個室空間"></div>
+      <div class="stack">
+        <div class="photo"><img src="assets/room_portrait.png" alt="陶板浴の利用シーン"></div>
+        <div class="photo"><img src="assets/bed_detail.png" alt="陶板浴設備のクローズアップ"></div>
+      </div>
+    </div>
+    <p style="margin-top:20px">
+      清潔感のある個室空間で、周りを気にせずゆっくり。<br>
+      「どんな場所なんだろう？」が事前にイメージできることも、初めての方には大切な安心材料です。
+    </p>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="eyebrow">COMPARE</div>
+    <h2 class="section-title">お風呂・サウナと、<br>どう違うの？</h2>
+    <p class="lead">どれが一番というより、<strong>自分にとって続けやすい方法</strong>を選ぶことが大切です。</p>
+    <div style="overflow:auto">
+      <table class="compare">
+        <thead>
+          <tr><th>項目</th><th>陶板浴</th><th>お風呂</th><th>サウナ</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>温度の目安</td><td>約40℃前後</td><td>約38〜40℃</td><td>高温</td></tr>
+          <tr><td>過ごし方</td><td>横になって休む</td><td>お湯につかる</td><td>高温空間で過ごす</td></tr>
+          <tr><td>印象</td><td>やさしく温まる</td><td>日常使いしやすい</td><td>爽快感が強い</td></tr>
+          <tr><td>向いている方</td><td>頑張らずに整えたい方</td><td>毎日の入浴習慣に</td><td>高温が好きな方</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">FIRST VISIT FLOW</div>
+    <h2 class="section-title">はじめてでも、<br>思ったより気軽です。</h2>
+    <div class="steps">
+      <div class="step"><div class="label">STEP 1</div><h3>ご予約・ご来店</h3><p>まずは気軽に体験。店舗やメニューを確認してご予約ください。</p></div>
+      <div class="step"><div class="label">STEP 2</div><h3>ご案内</h3><p>初めての方にも分かりやすく、流れをご説明します。</p></div>
+      <div class="step"><div class="label">STEP 3</div><h3>陶板浴を体験</h3><p>温められた陶板の上で15〜40分ほど、ただゆっくり過ごします。</p></div>
+      <div class="step"><div class="label">STEP 4</div><h3>余韻までセルフケア</h3><p>終わったあとも慌てず、自分のペースで。心地よさまで含めてケア時間に。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="container">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="section-title">よくあるご質問</h2>
+    <details>
+      <summary>サウナが苦手でも大丈夫ですか？</summary>
+      <p>陶板浴はサウナのような高温空間とは異なり、約40℃前後の心地よい温かさの中で横になって過ごします。熱さを我慢するのが苦手な方にも取り入れやすい温活です。</p>
+    </details>
+    <details>
+      <summary>汗をたくさんかかないと意味がないですか？</summary>
+      <p>大量の発汗だけを目的にするものではありません。ゆっくり温まりながら、リラックスして過ごすことを大切にしています。</p>
+    </details>
+    <details>
+      <summary>初回はどのくらいから受けられますか？</summary>
+      <p>まずは初回15分から気軽に体験できる設計にすると、初めての方にもハードルが低くおすすめです。実際のメニュー内容に合わせて表記をご調整ください。</p>
+    </details>
+    <details>
+      <summary>どんな人におすすめですか？</summary>
+      <p>冷えが気になる方、なんとなく疲れやすい方、休む時間が足りない方、サウナの熱さが苦手な方、秋から冬に向けたセルフケア習慣を始めたい方におすすめです。</p>
+    </details>
+  </div>
+</section>
+
+<section class="section final" id="reserve">
+  <div class="container">
+    <div class="final-box">
+      <div class="eyebrow">START THIS AUTUMN</div>
+      <h2 class="section-title">冬支度は、服だけじゃない。<br><span class="accent">身体もそろそろ、はじめませんか？</span></h2>
+      <p class="lead">
+        「寒くなったら」ではなく、<strong class="accent">「寒くなる前から」。</strong><br>
+        この秋、陶板浴で自分をいたわる時間を始めてみませんか？
+      </p>
+      <div class="chips" style="margin-top:22px">
+        <span class="chip">初回15分から</span>
+        <span class="chip">ワンコイン体験 500円</span>
+        <span class="chip">完全個室</span>
+        <span class="chip">着替え不要</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn primary" href="#" onclick="alert('ここに予約ページのURLを設定してください');return false;">初回体験を予約する</a>
+        <a class="btn secondary" href="#" onclick="alert('ここに店舗一覧のURLを設定してください');return false;">店舗情報を見る</a>
+      </div>
+      <p class="mini-note">EPORASHE 陶板浴 / TRIPLESUN</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>EPORASHE / TRIPLESUN</div>
+    <div style="opacity:.72">※本ページはリラクゼーション・温活習慣のご紹介を目的としたサンプルLPです。料金や実施内容、導線URLは実際の運用内容に合わせてご調整ください。</div>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a href="#diagnosis" class="btn secondary">診断する</a>
+  <a href="#reserve" class="btn primary">予約へ</a>
+</div>
+
+<script>
+const tips = {
+  busy:{
+    title:"忙しいあなたへ｜休むことまで、予定に入れていい。",
+    text:"土日も予定を詰め込みがちな方には、陶板浴を『空いたら行くもの』ではなく『先に入れる休息』として。短時間でも、自分のための静かな余白をつくれます。"
+  },
+  cold:{
+    title:"冷えが気になるあなたへ｜秋は、始めどきです。",
+    text:"本格的な寒さの前から、やさしく身体を温める時間を少しずつ。高温を我慢するのではなく、約40℃前後の心地よい中温でゆっくり過ごす習慣がおすすめです。"
+  },
+  sleep:{
+    title:"眠りを整えたいあなたへ｜オフに切り替える練習を。",
+    text:"一日中頭が休まらない方には、まず『何もしない時間』をつくることから。陶板浴は、気持ちをほどいていくセルフケアのきっかけにもなります。"
+  },
+  beauty:{
+    title:"美容を大切にしたいあなたへ｜休息も美容習慣に。",
+    text:"スキンケアや施術だけでなく、自分を休ませる時間も大切に。外側を整えるだけではなく、内側の余白をつくる習慣として取り入れてみませんか。"
+  },
+  sauna:{
+    title:"サウナが苦手なあなたへ｜頑張らなくていい温活があります。",
+    text:"高温・大量発汗が得意でなくても大丈夫。陶板浴は、熱さを我慢しないで心地よく過ごせる『やさしい温活』です。"
+  },
+  season:{
+    title:"季節の変わり目がつらいあなたへ｜秋を切り替え期間に。",
+    text:"夏の冷やす生活から、冬の温める生活へ。秋を、一気に頑張る時期ではなく、身体をいたわりながら整えていく時期として使ってみてください。"
+  }
+};
+const selected = [];
+const result = document.getElementById('diag-result');
+document.querySelectorAll('.diag-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const key = btn.dataset.key;
+    const i = selected.indexOf(key);
+    if(i >= 0){
+      selected.splice(i,1);
+      btn.classList.remove('active');
+    } else {
+      if(selected.length >= 2){
+        const removed = selected.shift();
+        document.querySelector(`[data-key="${removed}"]`).classList.remove('active');
+      }
+      selected.push(key);
+      btn.classList.add('active');
+    }
+    render();
+  });
+});
+function render(){
+  if(selected.length === 0){
+    result.innerHTML = '<h3>あなたにおすすめなのは…</h3><p>気になる項目を選ぶと、ここにおすすめの受け方が表示されます。</p>';
+    return;
+  }
+  if(selected.length === 1){
+    const r = tips[selected[0]];
+    result.innerHTML = `<h3>${r.title}</h3><p>${r.text}</p>`;
+    return;
+  }
+  const a = tips[selected[0]], b = tips[selected[1]];
+  result.innerHTML = `<h3>あなたには「やさしく温まりながら、ひとりで休む時間をつくる」陶板浴がおすすめです。</h3><p>${a.text}</p><p>${b.text}</p>`;
+}
+</script>
+
+</body>
+</html>
